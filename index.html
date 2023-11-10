@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="screen-orientation" content="portrait">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <title>B|Braun XMAS Lottery</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/wall.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="img/tree.webp?">    
+   
+</head>
+<body>
+<div id="main" class="wall">
+    <div class="result-btn">
+       <a href="./result.html" target="_blank">RESULTS</a>
+       <div class="logo" style="color:white; font-size: 35px; "><img src="img/bbraun.webp" id="imglogo" alt="B|BRAUN LOGO"><br>XMAS LOTTERY</div>
+    </div>
+</div>
+
+<div id="result" class="result">
+</div>
+<div id="tools" class="tools invisible">
+     <button 
+        v-for="value in btns"
+        @click="onClick(value)"
+        class="pure-button"
+        :class="{ 'button-error': selected == value}"
+       >| |</button>
+    <button
+       class="pure-button"
+       @click="toggle"
+       :class="{'button-secondary': !running,
+               'button-success': running}">{{running?'STOP':'GO'}}</button>
+    <button class="pure-button button-warning" @click="reset">RESET</button>
+</div>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<script type="text/javascript" src="js/tagcanvas.js"></script>
+<script type="text/javascript" src="js/member.js"></script>
+<script src="js/index.js"></script>
+<script src="js/snow3d.js"></script>
+</body>
+</html>
