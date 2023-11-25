@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <meta name="screen-orientation" content="portrait">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
@@ -19,6 +25,8 @@
         body, html {
             width: 100%;
             height: 100%;
+            font-family: 'Titillium Web', sans-serif;
+            color: beige;
         }
         .mask {
             -webkit-filter:blur(5px);
@@ -30,19 +38,21 @@
         }
         .result-list {
             text-align: center;
-            color: #4de7c8;
+            
             font-size: 30px;
             line-height: 50px;
             margin-top: 50px;
             margin-bottom: 50px;
-            font-family: '幼圆';
+            
         }
         .result-title {
             text-align: center;
-            color: #4de7c8;
-            font-size: 40px;
+            
+            font-size: 70px;
             margin-top: 100px;
-            font-family: '幼圆';
+            font-family: 'Kanit', sans-serif;
+
+            
         }
 
     </style>
@@ -50,7 +60,7 @@
 <body>
 <div id="main" class="wall">
     
-    <div class="result-title">RESULTS</div>
+    <div class="result-title">RISULTATI</div>
     <div class="result-list" v-for="result in results">
 
     </div>
@@ -58,7 +68,7 @@
 <script type="text/javascript" src="js/vue.js"></script>
 <script>
     let locals = window.localStorage
-    let totalprizesnumber = 20;
+    let totalprizesnumber = 30;
     let counter = Number(locals.getItem("counter"));
     let resultcontainer = document.querySelector(".result-list");
     for(let i =0; i<counter; i++){
@@ -70,6 +80,7 @@
     }
 
 </script>
-
+<!-- <script src="js/snow3d.js"></script>
+<script>startSnow();</script> -->
 </body>
 </html>

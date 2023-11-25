@@ -1,6 +1,36 @@
+function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
 (function(){
         
         
+    function getHighestExtractValue() {
+        let highestKey = null;
+        let highestNumber = -Infinity;
+      
+        // Iterate through all keys in localStorage
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+      
+          // Check if the key matches the pattern 'extract' followed by a number
+          if (key && key.startsWith('extract')) {
+            const extractNumber = parseInt(key.replace('extract', ''), 10);
+            
+            // Update the highest number and corresponding key
+            if (!isNaN(extractNumber) && extractNumber > highestNumber) {
+              highestNumber = extractNumber;
+              highestKey = key;
+            }
+          }
+        }
+      
+        // Retrieve the value corresponding to the highest key
+        const highestValue = highestKey ? localStorage.getItem(highestKey) : null;
+        const splitted = highestValue.split(' - ');       
+        const extractedValue = splitted[1];
+        return extractedValue;
+      }
 
     var choosed = JSON.parse(localStorage.getItem('choosed')) || {};
     
@@ -16,7 +46,28 @@
             item.index = index;
             var key = getKey(item);
             var color = choosed[key] ? 'yellow' : 'white';
-            html.push('<li><a href="#" style="color: ' + item.color + ';">' + item.name + '</a></li>');
+           //html.push('<li><a href="#" style="color: ' + item.color + ';">' + item.name + '</a></li>');
+           let coloreitem="white";
+           switch(item.color){
+            case 'verde':
+                coloreitem="#99FFCC";
+                break;
+            case 'bianco':
+                coloreitem="white";
+                break;
+            case 'azzurro':
+                coloreitem="#ABF0FA";
+                 break;
+            case 'rosa':
+                coloreitem="#F7C7F7";
+                break;
+            case 'giallo':
+                coloreitem="#FAF5AA";
+                break;
+        
+           }
+           html.push(`<li><a  style="color: ${coloreitem}">${item.name}</a></li>`);
+           
         });
         html.push('</ul>');
         return html.join('');
@@ -41,12 +92,13 @@
             .slice(0, count)
             .map(function(m){
               choosed[getKey(m)] = 1;
-              list[m.index].style.color = color;
+              //list[m.index].style.color = color;
 
               totalcount=Number(localStorage.getItem("counter"));
               localStorage.setItem("counter", totalcount+1);
               localStorage.setItem(`extract${totalcount}`,`${m.name} - ${m.color}`)
-              return m.name + '<br/>' + m.color ; 
+              return m.name
+              //return m.name + '<br/>' + m.color ; 
             });
             
         localStorage.setItem('choosed', JSON.stringify(choosed));
@@ -88,19 +140,44 @@
                 $('#result').css('display', 'none');
                 $('#main').removeClass('mask');
                 this.selected = num;
+                
+                  
+                  
             },
             toggle: function(){
                 if(this.running){
+                    
                     TagCanvas.SetSpeed('myCanvas', speed());
                     var ret = lottery(this.selected);
                     if (ret.length === 0) {
                         $('#result').css('display', 'block').html('<span>END</span>');
+                        
+                        
                         return
                     }
                     $('#result').css('display', 'block').html('<span>' + ret.join('</span><span>') + '</span>');
                     TagCanvas.Reload('myCanvas');
+                    let counter = 0;
+                    const totalIterations = 12;
+                    const intervalId = setInterval(function() {                    
+                        confetti({
+                            angle: randomInRange(55, 125),
+                            spread: randomInRange(50, 70),
+                            particleCount: randomInRange(50, 100),
+                            origin: { y: 0.6 }
+                          });
+                    counter++;                    
+                    if (counter >= totalIterations) {
+                        clearInterval(intervalId);                         
+                    }
+                    }, 100);
+                    
+                    
+                    let color = getHighestExtractValue();                    
+                    let ticketColorClass=`ticket-${color}`;
+                    document.querySelector(".result").querySelector("span").classList.add(ticketColorClass);
                     setTimeout(function(){
-                        localStorage.setItem(new Date().toString(), JSON.stringify(ret));
+                        //localStorage.setItem(new Date().toString(), JSON.stringify(ret));
                         $('#main').addClass('mask');
                     }, 300);
                 } else {

@@ -27,7 +27,7 @@ function run() {
           factor: 0.90 * factor
         }),
         new Spiral({
-          foreground: "#660000", // red spiral shadow
+          foreground: "#520066", // red spiral shadow
           angleOffset: Math.PI * 0.95,
           factor: 0.93 * factor
         }),
@@ -37,7 +37,7 @@ function run() {
           factor: 0.93 * factor
         }),
         new Spiral({
-          foreground: "#ff0000", // red Spiral
+          foreground: "#9530ce", // red Spiral
           angleOffset: Math.PI,
           factor: factor
         }),
