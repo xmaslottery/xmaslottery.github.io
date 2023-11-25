@@ -1,4 +1,4 @@
-!(function () {
+function startSnow() {
   var t = {
       802: function (t) {
         t.exports =
@@ -18103,4 +18103,4 @@
           stop: () => Ps({ paused: !0 }),
         });
     })();
-})();
+};
