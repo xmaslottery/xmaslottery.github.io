@@ -34,4 +34,3 @@ string = string[:-1]
 string+= "]"
 with open('member.js', 'w') as f:
     f.write(string)
-

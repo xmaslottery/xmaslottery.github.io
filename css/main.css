@@ -1,6 +1,7 @@
 body, html {
     width: 100%;
     height: 100%;
+    background-color: black;
 }
 .result {
     position: absolute;
@@ -11,16 +12,20 @@ body, html {
     text-align: center;
     padding: 10px;
     display: none;
+    
 }
 .result span {
     display: inline-block;
-    font-size: 25px;
-    width: 150px;
-    background: #fff;
-    line-height: 30px;
+    font-size: 60px;
+    font-family: 'Inconsolata', monospace;
+    
+    width: 450px;
+    height: 300px;
+    
+    line-height: 300px;
     color: #000;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
     padding: 10px 0;
 }
@@ -153,3 +158,40 @@ button, html input[type=button], input[type=reset], input[type=submit] {
   .result-btn a:visited{
     color: #29ecee;
   }
+
+  .source-code {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background-color: #ff0000;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+  .containerblack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 99vw;
+    height: 99vh;
+  }
+.ticket-giallo{
+    background-color: #FAF5AA;
+}
+.ticket-bianco{
+    background-color: white;
+}
+.ticket-rosa{
+    background-color: #F7C7F7;
+}
+.ticket-azzurro{
+    background-color: #ABF0FA;
+}
+.ticket-verde{
+    background-color: #99FFCC;
+}
