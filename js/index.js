@@ -229,7 +229,7 @@ function randomInRange(min, max) {
                     localStorage.clear();
                     location.reload(true);
                     localStorage.setItem("counter",0);
-                    document.cookie = "batch=4";
+                    
                 }
             },
             onClick: function(num){

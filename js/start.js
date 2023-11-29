@@ -16,7 +16,8 @@ setTimeout(() => {
 let script6 = document.createElement("script");
 script6.src = "js/snow3d.js";
 body.appendChild(script6);
-document.cookie = "batch=4";
+if(!checkCookieExists("batch")) document.cookie = "batch=4";
+
 document.cookie = "totalprizes=30";
 
 
@@ -34,4 +35,15 @@ function getCookie(name) {
       }
     }
     return null; // Return null if cookie not found
+  }
+
+  function checkCookieExists(cookieName) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(cookieName + '=')) {
+        return true;
+      }
+    }
+    return false;
   }
