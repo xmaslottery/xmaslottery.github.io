@@ -136,7 +136,8 @@ function randomInRange(min, max) {
     };
     var createHTML = function(){
         var html = [ '<ul>' ];
-        member.forEach(function(item, index){
+        const filteredArray=filterMembers(member)
+        filteredArray.forEach(function(item, index){
             item.index = index;
             var key = getKey(item);
             var color = choosed[key] ? 'yellow' : 'white';
@@ -310,3 +311,17 @@ function randomInRange(min, max) {
     });
 })();
 document.querySelector(".tools").classList.remove("invisible");
+
+
+function filterMembers(member) {
+    let members_filtered = [];
+    
+    if (member.length <= 700) {
+      members_filtered = [...member];
+    } else {
+      let shuffled = member.sort(() => Math.random() - 0.5);
+      members_filtered = shuffled.slice(0, 700);
+    }
+  
+    return members_filtered;
+  }
