@@ -68,7 +68,7 @@
 <script type="text/javascript" src="js/vue.js"></script>
 <script>
     let locals = window.localStorage
-    let totalprizesnumber = 30;
+    let totalprizesnumber = getCookie("totalprizes");
     let counter = Number(locals.getItem("counter"));
     let resultcontainer = document.querySelector(".result-list");
     for(let i =0; i<counter; i++){
@@ -78,7 +78,19 @@
         resultcontainer.insertBefore(itemDiv, resultcontainer.firstChild);
 
     }
-
+    function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Check if the cookie name matches
+      if (cookie.startsWith(name + '=')) {
+        // Get the cookie value and convert it to an integer
+        const value = parseInt(cookie.substring(name.length + 1), 10);
+        return isNaN(value) ? null : value;
+      }
+    }
+    return null; // Return null if cookie not found
+  }
 </script>
 <!-- <script src="js/snow3d.js"></script>
 <script>startSnow();</script> -->
