@@ -6,7 +6,7 @@ setTimeout(() => {
     document.querySelector(".containerblack").remove();
     startSnow();
     let script7=document.createElement("script");
-    script7.src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js";
+    script7.src="js/confetti.js";
     
     body.appendChild(script7);
 }, 5000);
