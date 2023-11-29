@@ -17,8 +17,8 @@ let script6 = document.createElement("script");
 script6.src = "js/snow3d.js";
 body.appendChild(script6);
 if(!checkCookieExists("batch")) document.cookie = "batch=4";
+if(!checkCookieExists("totalprizes")) document.cookie = "totalprizes=30";
 
-document.cookie = "totalprizes=30";
 
 
 
