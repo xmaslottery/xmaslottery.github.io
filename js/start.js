@@ -19,6 +19,14 @@ body.appendChild(script6);
 if(!checkCookieExists("batch")) document.cookie = "batch=4";
 if(!checkCookieExists("totalprizes")) document.cookie = "totalprizes=30";
 
+const styleSheet = document.styleSheets[3];
+console.log(getCookie("batch"))
+if(getCookie("batch")==4){
+  styleSheet.insertRule('.result span  { max-width: 22vw; }', 0);
+}
+else if(getCookie("batch")==5){
+  styleSheet.insertRule('.result span  { max-width: 18vw; }', 0);
+}
 
 
 
