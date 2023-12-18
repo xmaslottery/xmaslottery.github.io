@@ -6,23 +6,38 @@ class Contact:
 
 contacts = []
 
-for i in range(1000):
-    phone_number = f"{i+1:04d}"
-    contact = Contact(phone_number, "", "verde")
-    contacts.append(contact)
-for i in range(100):
-    phone_number = f"{i+101:04d}"
-    contact = Contact(phone_number, "", "rosa")
-    contacts.append(contact)
-for i in range(100):
-    phone_number = f"{i+1:04d}"
-    contact = Contact(phone_number, "", "bianco")
-    contacts.append(contact)
-for i in range(100):
-    phone_number = f"{i+1:04d}"
-    contact = Contact(phone_number, "", "azzurro")
+for i in range(1,1001):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "giallo")
     contacts.append(contact)
 
+for i in range(1,1001):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "rosa")
+    contacts.append(contact)
+
+
+
+for i in range(1,101):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "azzurro")
+    contacts.append(contact)
+for i in range(1,101):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "verde")
+    contacts.append(contact)
+for i in range(1,101):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "bianco")
+    contacts.append(contact)
+for i in range(101,200):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "bianco")
+    contacts.append(contact)
+for i in range(201,300):
+    phone_number = f"{i:04d}"
+    contact = Contact(phone_number, "", "bianco")
+    contacts.append(contact)
 
 
 
