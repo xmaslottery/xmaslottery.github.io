@@ -21,14 +21,14 @@
       
 
 <div id="main" class="wall">
-    <div id="githublink">SOURCE CODE: github.com/xmaslottery</div>
+    <div id="githublink">👨‍💻 SOURCE CODE: github.com/xmaslottery</div>
     <div class="result-btn">
        <a href="./result.html" target="_blank">RISULTATI</a>
-       <div class="logo" style="color:white; font-size: 35px; "><img src="img/bbraun.webp" id="imglogo" alt="B|BRAUN LOGO"><br>XMAS LOTTERY</div>
+       <div class="logo" style="color:white; font-size: 35px; "><img src="img/bbraun.webp" id="imglogo" alt="B|BRAUN LOGO"><br>2024 🎅 XMAS LOTTERY</div>
     </div>
 </div>
 
-<div id="result" class="result">
+<div id="result" class="result"> 
 </div>
 <div id="tools" class="tools invisible">
      <button 
@@ -36,13 +36,13 @@
         @click="onClick(value)"
         class="pure-button"
         :class="{ 'button-error': selected == value}"
-       >| |</button>
+       >⏸️</button>
     <button
        class="pure-button"
        @click="toggle"
        :class="{'button-secondary': !running,
-               'button-success': running}">{{running?'STOP':'GO'}}</button>
-    <button class="pure-button button-warning" @click="reset">RESET</button>
+               'button-success': running}">{{running?'⏹️':'▶️'}}</button>
+    <button class="pure-button button-warning" @click="reset">♻️</button>
 </div>
 <script src="js/tree_loading.js"></script>
 <script src="js/start.js"></script>
