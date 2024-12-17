@@ -152,11 +152,9 @@ button, html input[type=button], input[type=reset], input[type=submit] {
     }
   }
   .result-btn a{
-    color: #29ecee;
+    color: white;
   }
-  .result-btn a:visited{
-    color: #29ecee;
-  }
+  
 
   .source-code {
     position: absolute;
@@ -208,7 +206,7 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 }
 
 #githublink{
-    color:rgb(66, 184, 221);
+    color:white;
     font-size: 25px;
     position: absolute;
     bottom: 15px;
