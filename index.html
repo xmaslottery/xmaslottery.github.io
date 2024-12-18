@@ -24,7 +24,7 @@
     <div id="githublink">👨‍💻 SOURCE CODE: github.com/xmaslottery</div>
     <div class="result-btn">
        <a href="./result.html" target="_blank">RISULTATI</a>
-       <div class="logo" style="color:white; font-size: 35px; "><img src="img/bbraun.webp" id="imglogo" alt="B|BRAUN LOGO"><br>2024 🎅 XMAS LOTTERY</div>
+       <div class="logo" style="color:white; font-size: 35px; " id="yeardiv"></div>
     </div>
 </div>
 
@@ -54,6 +54,11 @@
 <script  id="myScript5" src="js/index.js"></script>
 
 <script  id="myScript6"></script>
+<script>
+    const today = new Date();
+    const currentYear = today.getFullYear();
+    document.querySelector("#yeardiv").innerHTML = `<img src="img/bbraun.webp" id="imglogo" alt="B|BRAUN LOGO"><br>${currentYear} 🎅 XMAS LOTTERY`;
+</script>
 
 </body>
 </html>
